@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <table class="table">
+            <thead>
+                <th></th>
+                <th>Id</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Age</th>
+                <th>Group</th>
+                <th></th>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let teacher of teachers">
+                   <td><button class="btn btn-dark" (click)="edit(teacher.id)">Изменить</button></td>     
+                    <td>{{teacher.id}}</td>
+
+                    <td *ngIf="editRowId === teacher.id">
+                        <input type="text" class="form-control" id="firstName" required [(ngModel)]="teacher.firstName" #firstName="ngModel">
+                    </td>
+
+                    <td *ngIf="editRowId !== teacher.id">{{teacher.firstName}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
