@@ -20,6 +20,13 @@ export class TeacherCompComponent implements OnInit {
     this.editRowId = val;
   }
 
+  remove(id){
+
+    let index = this.teachers.findIndex(teacher => teacher.id ==id);
+
+    this.teachers.splice(index, 1);
+  }
+
   ngOnInit(): void {
   }
 

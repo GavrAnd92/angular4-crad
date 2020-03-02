@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TeacherCompComponent } from './myWork/teacher-comp/teacher-comp.component';
-import { FormsModule } from '@angular/forms';//add4
+import { FormsModule } from '@angular/forms';
+import { NewTeatherComponent } from './myWork/new-teather/new-teather.component';//add4
 
 @NgModule({
   declarations: [
     AppComponent,
-    TeacherCompComponent
+    TeacherCompComponent,
+    NewTeatherComponent
   ],
   imports: [
     BrowserModule,
