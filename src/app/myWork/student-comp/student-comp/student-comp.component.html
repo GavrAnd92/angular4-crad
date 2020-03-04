@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row">
+        <table class="table">
+            <thead>
+                <th></th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Age</th>
+                <th>Phone</th>
+                <th>Group</th>
+                <th></th>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let student of students">
+                   <td><button class="btn btn-dark" (click)="edit(student.id)">Изменить</button></td>     
+                    <td>{{student.id}}</td>
+
+                    <td *ngIf="editRowId === student.id">
+                        <input type="text" class="form-control" id="Name" required [(ngModel)]="student.Name" #Name="ngModel">
+                    </td>
+
+                    <td *ngIf="editRowId !== student.id">{{student.Name}}</td>
+
+                    
+
+                    <td *ngIf="editRowId === student.id">
+                        <input type="number" class="form-control" id="age" required [(ngModel)]="student.age" #age="ngModel">
+                    </td>
+
+                    <td *ngIf="editRowId !== student.id">{{teacher.age}}</td>
+
+                    <td *ngIf="editRowId === student.id">
+                        <input type="number" class="form-control" id="phone" required [(ngModel)]="student.phone" #phone="ngModel">
+                    </td>
+
+                    <td *ngIf="editRowId !== student.id">{{student.phone}}</td>
+
+                    <td *ngIf="editRowId === student.id">
+                        <input type="text" class="form-control" id="group" required [(ngModel)]="student.group" #group="ngModel">
+                    </td>
+
+                    <td *ngIf="editRowId !== student.id">{{student.group}}</td>
+
+
+                    <td>
+                        <button class="btn btn-success" (click)="edit('')" *ngIf="editRowId === phone.id">Save</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" (click)="remove(student.id)" *ngIf="editRowId !== phone.id">Remove</button>
+                    </td>
+                    
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- <button class="btn btn-succsess" routerLink="/newTeacher">Создать нового</button> -->
+    </div>
+</div>

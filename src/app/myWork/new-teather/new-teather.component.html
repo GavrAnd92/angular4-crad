@@ -8,14 +8,30 @@
             <label for="">Имя</label>
             <input type="text" class="form-control" id="firstName" required [(ngModel)]="model.firstName" name="firstName" #firstName="ngModel">
 
+            <div [hidden]="firstName.valid" class="alert alert-danger">
+                    Поле обязательноє для заполнения!
+            </div>
+
             <label for="">Фамилия</label>
             <input type="text" class="form-control" id="lastName" required [(ngModel)]="model.lastName" name="lastName" #lastName="ngModel">
+
+            <div [hidden]="lastName.valid" class="alert alert-danger">
+                Поле обязательноє для заполнения!
+            </div>
 
             <label for="">Возраст</label>
             <input type="number" class="form-control" id="age" required [(ngModel)]="model.age" name="age" #age="ngModel">
 
+            <div [hidden]="age.valid" class="alert alert-danger">
+                Поле обязательноє для заполнения!
+            </div>
+
             <label for="">Група</label>
             <input type="text" class="form-control" id="group" required [(ngModel)]="model.group" name="group" #group="ngModel">
+
+            <div [hidden]="group.valid" class="alert alert-danger">
+                Поле обязательноє для заполнения!
+            </div>
         </div>
 
 
