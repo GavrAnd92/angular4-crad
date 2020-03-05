@@ -13,7 +13,7 @@ export class StudentCompComponent implements OnInit {
 
 
   students: Student [];
-  editRowId: any = '';
+  editRowIdStudent: any = '';
 
   constructor(private service: StudentService, private router: Router) { 
 
@@ -22,7 +22,7 @@ export class StudentCompComponent implements OnInit {
 
 
   edit(val){
-    this.editRowId = val;
+    this.editRowIdStudent = val;
   }
 
   remove(id){

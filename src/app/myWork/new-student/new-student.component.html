@@ -1,0 +1,41 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit(studentForm)" #studentForm>
+        <div class="form-group">
+            <label for="">Имя</label>
+            <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name" #name="ngModel">
+
+            <div [hidden]="name.valid" class="alert alert-danger">
+                Поле обязательноє для заполнения!
+            </div>
+
+            <label for="">Aватар</label>
+            <input type="text" class="form-control" id="avatar" required [(ngModel)]="model.avatar" name="avatar" #avatar="ngModel">
+
+
+            <label for="">Возраст</label>
+            <input type="number" class="form-control" id="age" required [(ngModel)]="model.age" name="age" #age="ngModel">
+
+            <div [hidden]="age.valid" class="alert alert-danger">
+                Поле обязательноє для заполнения!
+            </div>
+
+            <label for="">Телефон</label>
+            <input type="number" class="form-control" id="phone" required [(ngModel)]="model.phone" name="phone" #phone="ngModel">
+
+            <div [hidden]="phone.valid" class="alert alert-danger">
+                Поле обязательноє для заполнения!
+            </div>
+
+            <label for="">Група</label>
+            <input type="text" class="form-control" id="group" required [(ngModel)]="model.group" name="group" #group="ngModel">
+
+            <div [hidden]="group.valid" class="alert alert-danger">
+                Поле обязательноє для заполнения!
+            </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-success">Создать</button>
+
+    </form>
+</div>

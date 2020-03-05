@@ -7,7 +7,8 @@ import { TeacherCompComponent } from './myWork/teacher-comp/teacher-comp.compone
 import { FormsModule } from '@angular/forms';
 import { NewTeatherComponent } from './myWork/new-teather/new-teather.component';
 import { FormComponent } from './myWork/form/form.component';
-import { StudentCompComponent } from './myWork/student-comp/student-comp/student-comp.component';//add4
+import { StudentCompComponent } from './myWork/student-comp/student-comp/student-comp.component';
+import { NewStudentComponent } from './myWork/new-student/new-student.component';//add4
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { StudentCompComponent } from './myWork/student-comp/student-comp/student
     TeacherCompComponent,
     NewTeatherComponent,
     FormComponent,
-    StudentCompComponent
+    StudentCompComponent,
+    NewStudentComponent
   ],
   imports: [
     BrowserModule,

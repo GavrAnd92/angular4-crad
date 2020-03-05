@@ -5,56 +5,64 @@
                 <th></th>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Age</th>
+                <th>Avatar</th>
                 <th>Age</th>
                 <th>Phone</th>
                 <th>Group</th>
                 <th></th>
             </thead>
-
             <tbody>
                 <tr *ngFor="let student of students">
-                   <td><button class="btn btn-dark" (click)="edit(student.id)">Изменить</button></td>     
+                    <td><button class="btn btn-dark" (click)="edit(student.id)">Изменить</button></td>
                     <td>{{student.id}}</td>
 
-                    <td *ngIf="editRowId === student.id">
-                        <input type="text" class="form-control" id="Name" required [(ngModel)]="student.Name" #Name="ngModel">
+                    <td *ngIf="editRowIdStudent === student.id">
+                        <input type="text" class="form-control" id="name" required [(ngModel)]="student.name" #name="ngModel">
                     </td>
 
-                    <td *ngIf="editRowId !== student.id">{{student.Name}}</td>
+                    <td *ngIf="editRowIdStudent !== student.id">{{student.name}}</td>
 
-                    
 
-                    <td *ngIf="editRowId === student.id">
-                        <input type="number" class="form-control" id="age" required [(ngModel)]="student.age" #age="ngModel">
+                    <td *ngIf="editRowIdStudent === student.id">
+                        <input type="text" class="form-control" id="avatar" required [(ngModel)]="student.avatar" #avatar="ngModel">
                     </td>
 
-                    <td *ngIf="editRowId !== student.id">{{teacher.age}}</td>
+                    <td *ngIf="editRowIdStudent !== student.id"><img src="{{student.avatar}}" alt=""></td>
 
-                    <td *ngIf="editRowId === student.id">
-                        <input type="number" class="form-control" id="phone" required [(ngModel)]="student.phone" #phone="ngModel">
+                    <td *ngIf="editRowIdStudent === student.id">
+                        <input type="text" class="form-control" id="age" required [(ngModel)]="student.age" #age="ngModel">
                     </td>
 
-                    <td *ngIf="editRowId !== student.id">{{student.phone}}</td>
+                    <td *ngIf="editRowIdStudent !== student.id">{{student.age}}</td>
 
-                    <td *ngIf="editRowId === student.id">
+                    <td *ngIf="editRowIdStudent === student.id">
+                        <input type="text" class="form-control" id="phone" required [(ngModel)]="student.phone" #phone="ngModel">
+                    </td>
+
+                    <td *ngIf="editRowIdStudent !== student.id">{{student.phone}}</td>
+
+                    <td *ngIf="editRowIdStudent === student.id">
                         <input type="text" class="form-control" id="group" required [(ngModel)]="student.group" #group="ngModel">
                     </td>
 
-                    <td *ngIf="editRowId !== student.id">{{student.group}}</td>
+                    <td *ngIf="editRowIdStudent !== student.id">{{student.group}}</td>
 
 
                     <td>
-                        <button class="btn btn-success" (click)="edit('')" *ngIf="editRowId === phone.id">Save</button>
+                        <button class="btn btn-success" (click)="edit('')" *ngIf="editRowIdStudent === student.id">Save</button>
                     </td>
                     <td>
-                        <button class="btn btn-danger" (click)="remove(student.id)" *ngIf="editRowId !== phone.id">Remove</button>
+                        <button class="btn btn-danger" (click)="remove(student.id)" *ngIf="editRowIdStudent !== student.id">Remove</button>
                     </td>
-                    
+
+
+
+
                 </tr>
             </tbody>
         </table>
 
-        <!-- <button class="btn btn-succsess" routerLink="/newTeacher">Создать нового</button> -->
+        <button class="btn btn-success" routerLink="/newStudent">Создать нового</button>
+
     </div>
 </div>
